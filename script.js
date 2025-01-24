@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const taskInput = document.getElementById('task-input');
   const taskList = document.getElementById('task-list');
 
-  const addTask = () => {
+  function addTask() {
       const taskText = taskInput.value.trim();
       if (taskText === "") {
           alert("Please enter a task.");
@@ -22,10 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
       taskList.appendChild(taskItem);
 
       taskInput.value = "";
-  };
+  }
 
-  addButton.addEventListener('click', addTask);
+ addButton.addEventListener('click', addTask);
   taskInput.addEventListener('keypress', (event) => {
       if (event.key === 'Enter') addTask();
   });
 });
+
